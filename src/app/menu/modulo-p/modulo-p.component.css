@@ -1,0 +1,20 @@
+.p-card {
+  margin: 15px 0;
+  transition: all 0.3s ease;
+}
+
+.p-card:hover {
+  transform: scale(1.02);
+}
+
+.p-shadow-3 {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.p-shadow-2 {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.p-shadow-1 {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

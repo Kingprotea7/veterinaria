@@ -1,0 +1,67 @@
+
+<div class="router-outlet-container">
+<p-toolbar
+    styleClass="bg-gray-900 shadow-2"
+    [style]="{ 'border-radius': '3rem', 'background-image': 'linear-gradient(to right, var(--bluegray-500), var(--bluegray-800))' }">
+    <ng-template pTemplate="start">
+        <p-button (onClick)="sidebarVisible = true" icon="pi pi-align-justify"></p-button>
+    </ng-template>
+
+    <ng-template pTemplate="center">
+        <div class="flex align-items-center" style="width: 100%; padding-left: 80px;">
+            <i class="pi pi-spin pi-search" style="color: white; margin-right: 0.8rem;"></i>
+            <input type="text" pInputText placeholder="¿Desea buscar algún módulo en específico...?" class="flex-grow text-center" style="flex: 1 1 auto; min-width: 350px; max-width: 600px;"/>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="end">
+        <div class="flex align-items-center gap-2">
+            <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+            <span class="font-bold text-bluegray-50">Juanshi Mollinedo</span>
+            <p-splitButton class="pl-3" icon="pi pi-spin pi-cog" [model]="items"></p-splitButton>
+        </div>
+    </ng-template>
+</p-toolbar>
+
+
+    <router-outlet></router-outlet>
+
+
+
+<p-sidebar [(visible)]="sidebarVisible" [style]="{ 'background-color': 'rgba(0, 0, 0, 0.8)' }">
+  <ng-template pTemplate="header">
+      <div class="flex align-items-center gap-2" style="background-color: #2a2a2a; padding: 1rem; border-radius: 8px;">
+          <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+          <span class="font-bold text-white">Juan Mollinedo-USUARIO</span>
+      </div>
+  </ng-template>
+
+  <div class="p-3">
+      <div class="grid">
+          <div class="col-12 p-2">
+              <button pButton type="button" label="Inicio" icon="pi pi-home" class="p-button-primary w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          </div>
+          <div class="col-12 p-2">
+              <button pButton type="button" label="Estadísticas" icon="pi pi-chart-bar" class="p-button-secondary w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          </div>
+          <div class="col-12 p-2">
+              <button pButton type="button" label="Usuarios" icon="pi pi-users" class="p-button-success w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          </div>
+          <div class="col-12 p-2">
+              <button pButton type="button" label="Mascota/Paciente" icon="pi pi-user" class="p-button-info w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          </div>
+          <div class="col-12 p-2">
+              <button pButton type="button" label="Internamientos" icon="pi pi-bookmark" class="p-button-warning w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          </div>
+          <div class="col-12 p-2">
+              <button pButton type="button" label="Citas" icon="pi pi-calendar" class="p-button-danger w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          </div>
+          <div class="col-12 p-2">
+              <button pButton type="button" label="Doctores" icon="pi pi-user-md" class="p-button-help w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          </div>
+      </div>
+  </div>
+</p-sidebar>
+</div>
+
+

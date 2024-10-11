@@ -1,0 +1,16 @@
+.router-outlet-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f0f0f0; /* Fondo opcional */
+
+  /* Fondo del logo */
+  background-image: url('https://th.bing.com/th/id/OIF.SqW1CsIIckatztMr26kADA?rs=1&pid=ImgDetMain');
+  background-repeat: no-repeat;
+  background-position: center; /* Centra el logo */
+  background-size: 350px 350px; /* Ajusta el tamaño del logo */
+
+
+  /* Mantener la imagen fija mientras se hace scroll */
+  background-attachment: fixed;
+}
