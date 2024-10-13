@@ -10,11 +10,14 @@ import { ToastModule } from 'primeng/toast';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { MenuItem } from 'primeng/api';
 import { IconFieldModule } from 'primeng/iconfield';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { TabViewModule } from 'primeng/tabview';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [ToolbarModule, AvatarModule, SidebarModule, ButtonModule, CardModule, ModuloPComponent,RouterOutlet,ToastModule,SplitButtonModule,IconFieldModule],
+  imports: [TabMenuModule,TabViewModule,TableModule,ToolbarModule, AvatarModule, SidebarModule, ButtonModule, CardModule, ModuloPComponent,RouterOutlet,ToastModule,SplitButtonModule,IconFieldModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
@@ -27,7 +30,7 @@ items: MenuItem[]|undefined;
 
 
 ngOnInit(): void {
-this.items=[{label:"Salir"}]
+this.items=[{label:"Perfil"},{label:"Configuracion"},{label:"Salir"}]
 
 }
 }

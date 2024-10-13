@@ -1,16 +1,72 @@
 .router-outlet-container {
-  position: relative;
+  position: relative; /* El contenedor principal necesita ser relativo para que el logo se posicione respecto a este */
   min-height: 100vh;
   width: 100%;
   background-color: #f0f0f0; /* Fondo opcional */
+}
 
-  /* Fondo del logo */
-  background-image: url('ttps://th.bing.com/th/id/OIF.SqW1CsIIckatztMr26kADA?rs=1&pid=ImgDetMain');
-  background-repeat: no-repeat;
-  background-position: center; /* Centra el logo */
-  background-size: 350px 350px; /* Ajusta el tamaño del logo */
+.centered-logo {
+  position: absolute; /* El logo ahora está posicionado dentro del contenedor principal */
+  top: 35%; /* Ajusta la posición verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Corrige el centrado horizontal */
+  max-width: 340px; /* Ajusta el tamaño máximo del logo */
+  width: 100%;
+  height: auto;
+  opacity: 0.2; /* Leve transparencia */
+  z-index: 1; /* Asegura que esté por detrás de algunos elementos si es necesario */
+  pointer-events: none; /* Permite interactuar con los elementos sobre el logo */
+}
+
+.bg-dark {
+  background-color: #2c2c2c; /* Fondo oscuro elegante */
+}
+
+.text-white {
+  color: white;
+}
+
+.p-2 {
+  padding: 0.5rem; /* Menos altura */
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
-  /* Mantener la imagen fija mientras se hace scroll */
-  background-attachment: fixed;
+.router-outlet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.centered-logo {
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .centered-logo {
+    max-width: 100px;
+  }
+
+  .p-toolbar .flex-grow {
+    min-width: 200px;
+  }
 }

@@ -1,27 +1,40 @@
 
 <div class="router-outlet-container">
-<p-toolbar
-    styleClass="bg-gray-900 shadow-2"
-    [style]="{ 'border-radius': '3rem', 'background-image': 'linear-gradient(to right, var(--bluegray-500), var(--bluegray-800))' }">
-    <ng-template pTemplate="start">
-        <p-button (onClick)="sidebarVisible = true" icon="pi pi-align-justify"></p-button>
-    </ng-template>
 
-    <ng-template pTemplate="center">
-        <div class="flex align-items-center" style="width: 100%; padding-left: 80px;">
-            <i class="pi pi-spin pi-search" style="color: white; margin-right: 0.8rem;"></i>
-            <input type="text" pInputText placeholder="¿Desea buscar algún módulo en específico...?" class="flex-grow text-center" style="flex: 1 1 auto; min-width: 350px; max-width: 600px;"/>
-        </div>
-    </ng-template>
+  <img src="https://th.bing.com/th/id/OIF.SqW1CsIIckatztMr26kADA?rs=1&pid=ImgDetMain" alt="Company Logo" class="centered-logo">
 
-    <ng-template pTemplate="end">
-        <div class="flex align-items-center gap-2">
-            <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
-            <span class="font-bold text-bluegray-50">Juanshi Mollinedo</span>
-            <p-splitButton class="pl-3" icon="pi pi-spin pi-cog" [model]="items"></p-splitButton>
-        </div>
-    </ng-template>
+  <p-toolbar
+
+  styleClass="bg-gray-900 shadow-2"
+  [style]="{ 'border-radius': '3rem', 'background-image': 'linear-gradient(to right, var(--bluegray-500), var(--bluegray-800))' }">
+
+  <ng-template pTemplate="start">
+    <p-button (onClick)="sidebarVisible = true" icon="pi pi-align-justify"></p-button>
+  </ng-template>
+  <ng-template pTemplate="center">
+    <div class="flex align-items-center" style="width: 100%; padding-left: 80px;">
+      <i class="pi pi-spin pi-search" style="color: white; margin-right: 0.8rem;"></i>
+      <input type="text" pInputText placeholder="¿Desea buscar algún módulo en específico...?" class="flex-grow text-center"
+             style="flex: 1 1 auto; min-width: 350px; max-width: 600px;" />
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="end">
+    <div class="flex align-items-center gap-2">
+      <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+      <span class="font-bold text-bluegray-50">Juanshi Mollinedo</span>
+      <p-splitButton class="pl-3" icon="pi pi-spin pi-cog" [model]="items" appendTo="body"></p-splitButton> <!-- Solución aplicada -->
+    </div>
+  </ng-template>
 </p-toolbar>
+<div class="p-d-flex p-jc-end p-mb-3 p-mt-2 pt-3 pb-3" style="width: 100%;">
+  <p-button
+    label="Regresar"
+    icon="pi pi-arrow-left"
+    styleClass="p-button-rounded p-button-info p-button-raised"
+
+  ></p-button>
+</div>
 
 
     <router-outlet></router-outlet>
@@ -57,11 +70,22 @@
               <button pButton type="button" label="Citas" icon="pi pi-calendar" class="p-button-danger w-full" style="height: 50px; font-size: 1.1rem;"></button>
           </div>
           <div class="col-12 p-2">
-              <button pButton type="button" label="Doctores" icon="pi pi-user-md" class="p-button-help w-full" style="height: 50px; font-size: 1.1rem;"></button>
+              <button pButton type="button" label="Doctores" icon="pi pi-user-md" class="p-button-help w-full" style="height: 50px; font-size: 1.1rem;" routerLink="medicos"></button>
           </div>
       </div>
   </div>
 </p-sidebar>
 </div>
+<footer class="bg-dark text-white p-2">
+  <div class="flex justify-content-center align-items-center gap-2">
+    <i class="pi pi-building"></i>
+    <span class="font-bold">Nombre de la Institución</span>
+  </div>
+  <div class="flex justify-content-center align-items-center gap-2 mt-1">
+    <i class="pi pi-code"></i>
+    <span>Sistema creado por Stradivarius-SOFT</span>
+  </div>
+</footer>
+
 
 

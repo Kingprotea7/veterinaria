@@ -1,0 +1,80 @@
+<p-tabView>
+
+  <!-- Listar Médicos -->
+  <p-tabPanel header="Listar Médicos">
+    <div class="grid">
+      <!-- Columna izquierda: Listado de médicos (col-6) -->
+      <div class="col-12 md:col-6">
+        <div class="card">
+          <h3>Listado de Médicos</h3>
+          <p-table
+              [value]="doctors"
+              [paginator]="true"
+              [rows]="5"
+              [tableStyle]="{ 'min-width': '100%' }"
+              [rowsPerPageOptions]="[5, 10, 20]"
+              class="striped-table"
+          >
+            <ng-template pTemplate="header">
+              <tr>
+                <th style="width:25%; font-size: 0.875rem;">Nombre</th>
+                <th style="width:25%; font-size: 0.875rem;">País</th>
+                <th style="width:25%; font-size: 0.875rem;">Compañía</th>
+                <th style="width:25%; font-size: 0.875rem;">Representante</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-doctor>
+              <tr class="hover-row">
+                <td style="font-size: 0.875rem;">{{ doctor.name }}</td>
+                <td style="font-size: 0.875rem;">{{ doctor.country }}</td>
+                <td style="font-size: 0.875rem;">{{ doctor.company }}</td>
+                <td style="font-size: 0.875rem;">{{ doctor.representative }}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Información adicional del médico (col-6) -->
+      <div class="col-12 md:col-6">
+        <div class="card">
+          <h3>Información del Médico</h3>
+          <div class="card-body" style="font-size: 0.875rem;">
+            <p><strong>Nombre:</strong> Dr. Juan Pérez</p>
+            <p><strong>Especialidad:</strong> Cardiología</p>
+            <p><strong>Consultorio:</strong> 305</p>
+            <p><strong>Horario:</strong> Lunes a Viernes, 08:00 AM - 04:00 PM</p>
+            <p><strong>Teléfono:</strong> 123-456-7890</p>
+            <p><strong>Email:</strong> juan.perezfclinica.com</p>
+            <p><strong>Experiencia:</strong> 10 años</p>
+            <p><strong>Universidad:</strong> Universidad Nacional</p>
+            <p><strong>Certificaciones:</strong> Certificado en Cuidados Críticos</p>
+            <p><strong>Idiomas:</strong> Español, Inglés</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila inferior (col-12): Actividades recientes -->
+      <div class="col-12">
+        <div class="card">
+          <h3>Actividades Recientes</h3>
+          <div class="card-body">
+            <ul>
+              <li>Hoy - Atención 1: Consulta general</li>
+              <li>Hoy - Atención 2: Revisión de exámenes</li>
+              <li>Hoy - Atención 3: Seguimiento cardiológico</li>
+              <li>Ayer - Atención 4: Consulta de rutina</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-tabPanel>
+
+  <p-tabPanel header="Crear nuevo médico">
+  </p-tabPanel>
+  <p-tabPanel header="Modificar médico">
+  </p-tabPanel>
+  <p-tabPanel header="Eliminar médico">
+  </p-tabPanel>
+</p-tabView>
