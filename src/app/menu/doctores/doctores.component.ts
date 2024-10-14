@@ -4,15 +4,40 @@ import { TableModule } from 'primeng/table';
 import { Router } from '@angular/router';
 import { Fieldset, FieldsetModule } from 'primeng/fieldset';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { MenuItem } from 'primeng/api';
+import { MenubarModule } from 'primeng/menubar';
 @Component({
   selector: 'app-doctores',
   standalone: true,
-  imports: [TabViewModule,TableModule,FieldsetModule,RouterLink],
+  imports: [TabViewModule,TableModule,FieldsetModule,RouterLink,TabMenuModule,MenubarModule],
   templateUrl: './doctores.component.html',
   styleUrl: './doctores.component.css'
 })
 export class DoctoresComponent {
-  constructor(private router: Router) {}
+  items: MenuItem[] | undefined;
+  constructor(private router: Router) {
+
+    this.items = [
+      {
+        label: 'Acción 1',
+        icon: 'pi pi-fw pi-plus',
+        route: '/accion1'
+      },
+      {
+        label: 'Acción 2',
+        icon: 'pi pi-fw pi-pencil',
+        route: '/accion2'
+      },
+      {
+        label: 'Acción 3',
+        icon: 'pi pi-fw pi-trash',
+        command: () => {
+          this.router.navigate(['/accion3']);
+        }
+      }
+    ];
+  }
 
   navigateToHome() {
     this.router.navigate(['/menu']);

@@ -32,7 +32,7 @@
     label="Regresar"
     icon="pi pi-arrow-left"
     styleClass="p-button-rounded p-button-info p-button-raised"
-
+   (click)="goBack()"
   ></p-button>
 </div>
 
@@ -51,26 +51,26 @@
 
   <div class="p-3">
       <div class="grid">
-          <div class="col-12 p-2">
-              <button pButton type="button" label="Inicio" icon="pi pi-home" class="p-button-primary w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          <div class="col-12 p-1">
+              <button pButton type="button" label="Inicio" icon="pi pi-home" class="p-button-primary w-full" style="height: 50px; font-size: 1.1rem;" routerLink="menu"   (click)="sidebar()"></button>
           </div>
-          <div class="col-12 p-2">
-              <button pButton type="button" label="Estadísticas" icon="pi pi-chart-bar" class="p-button-secondary w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          <div class="col-12 p-1">
+              <button pButton type="button" label="Estadísticas" icon="pi pi-chart-bar" class="p-button-secondary w-full" style="height: 50px; font-size: 1.1rem;"  (click)="sidebar()"></button>
           </div>
-          <div class="col-12 p-2">
-              <button pButton type="button" label="Usuarios" icon="pi pi-users" class="p-button-success w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          <div class="col-12 p-1">
+              <button pButton type="button" label="Usuarios" icon="pi pi-users" class="p-button-success w-full" style="height: 50px; font-size: 1.1rem;"   (click)="sidebar()"></button>
           </div>
-          <div class="col-12 p-2">
-              <button pButton type="button" label="Mascota/Paciente" icon="pi pi-user" class="p-button-info w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          <div class="col-12 p-1">
+              <button pButton type="button" label="Mascota/Paciente" icon="pi pi-user" class="p-button-info w-full" style="height: 50px; font-size: 1.1rem;"   (click)="sidebar()"></button>
           </div>
-          <div class="col-12 p-2">
-              <button pButton type="button" label="Internamientos" icon="pi pi-bookmark" class="p-button-warning w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          <div class="col-12 p-1">
+              <button pButton type="button" label="Internamientos" icon="pi pi-bookmark" class="p-button-warning w-full" style="height: 50px; font-size: 1.1rem;"   (click)="sidebar()"></button>
           </div>
-          <div class="col-12 p-2">
-              <button pButton type="button" label="Citas" icon="pi pi-calendar" class="p-button-danger w-full" style="height: 50px; font-size: 1.1rem;"></button>
+          <div class="col-12 p-1">
+              <button pButton type="button" label="Citas" icon="pi pi-calendar" class="p-button-danger w-full" style="height: 50px; font-size: 1.1rem;"   (click)="sidebar()"></button>
           </div>
-          <div class="col-12 p-2">
-              <button pButton type="button" label="Doctores" icon="pi pi-user-md" class="p-button-help w-full" style="height: 50px; font-size: 1.1rem;" routerLink="medicos"></button>
+          <div class="col-12 p-1">
+              <button pButton type="button" label="Doctores" icon="pi pi-user-md" class="p-button-help w-full" style="height: 50px; font-size: 1.1rem;" routerLink="medicos"   (click)="sidebar()"></button>
           </div>
       </div>
   </div>

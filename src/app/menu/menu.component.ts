@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -13,7 +13,7 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { TabViewModule } from 'primeng/tabview';
 import { TableModule } from 'primeng/table';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-menu',
   standalone: true,
@@ -22,13 +22,20 @@ import { TableModule } from 'primeng/table';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
+  sidebar() {
+    this.sidebarVisible = false; // Cambia el estado a cerrado
+  }
+
+  injectado=inject(Location)
 save(arg0: string) {
 throw new Error('Method not implemented.');
 }
 sidebarVisible:boolean= false;
 items: MenuItem[]|undefined;
 
-
+goBack(): void {
+  this.injectado.back();
+}
 ngOnInit(): void {
 this.items=[{label:"Perfil"},{label:"Configuracion"},{label:"Salir"}]
 
